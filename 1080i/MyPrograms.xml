@@ -7,7 +7,7 @@
     <onload>ClearProperty(MediaMenu,Home)</onload>
     <onunload>ClearProperty(MediaMenu,Home)</onunload>
     <onunload>ClearProperty(Window.HasSettings,Home)</onunload>
-    <views>50,52,520,57,501</views>
+    <views>50,51,52,520,507,57,501</views>
     <controls>
         <include>CommonBackground</include>
         <control type="group">
@@ -21,6 +21,10 @@
             <!-- view id = 57 -->
             <include>AddonLowList</include>
             <!-- view id = 501 -->
+            <include>View_507_BigList</include>
+            <!-- view id = 507 -->
+            <include>VideoInfoWall</include>
+            <!-- view id = 51 -->
         </control>
         <include>Topbar</include>
         <control type="group">

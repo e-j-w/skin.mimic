@@ -6,8 +6,8 @@
             <include>Animation.Common</include>
             <animation effect="slide" time="300" tween="sine" easing="inout" start="0,0" end="0,-190" condition="[[Window.IsActive(videos) + Skin.HasSetting(Enable.ShiftPlot)] | [!Window.IsActive(videos) + Skin.HasSetting(Enable.ShiftDescription)]] + !Container.Content(files)">Conditional</animation>
             <control type="fixedlist" id="57">
-                <include condition="Window.IsActive(videos)">Contents57VideoList</include>
-                <include condition="!Window.IsActive(videos)">Contents57AlbumList</include>
+                <include condition="Window.IsActive(videos) | Window.IsVisible(programs)">Contents57VideoList</include>
+                <include condition="!Window.IsActive(videos) + !Window.IsVisible(programs)">Contents57AlbumList</include>
             </control>
             <include>ShiftLabels</include>
         </control>
@@ -30,7 +30,7 @@
         <ondown>60</ondown>
         <orientation>horizontal</orientation>
         <viewtype label="31079">BigWrap</viewtype>
-        <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(sets) | Container.Content(musicvideos) | Container.Content(files) | Container.Content(videos)</visible>
+        <visible>Window.IsVisible(programs) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(sets) | Container.Content(musicvideos) | Container.Content(files) | Container.Content(videos)</visible>
         <pagecontrol>60</pagecontrol>
         <preloaditems>2</preloaditems>
         <scrolltime tween="quadratic">400</scrolltime>
@@ -415,7 +415,7 @@
         <control type="group">
             <left>112</left>
             <top>957</top>
-            <visible>Window.IsActive(videos)</visible>
+            <visible>Window.IsActive(videos) | Window.IsVisible(programs)</visible>
             <control type="group">
                 <visible>Control.IsVisible(57)</visible>
                 <visible>[!String.IsEqual(Container.SortMethod,$LOCALIZE[13409]) + !Skin.HasSetting(Enable.MediaFlags)] | !Window.IsActive(videos)</visible>
